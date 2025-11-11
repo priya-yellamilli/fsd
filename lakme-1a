@@ -1,0 +1,32 @@
+const express = require('express');
+const app = express();
+
+app.use(express.json());
+
+// Home route
+app.get('/', (req, res) => {
+  res.send('<h2>Welcome to Express Routing Example</h2>');
+});
+
+// Route parameter example
+app.get('/user/:id', (req, res) => {
+  res.send(`User ID: ${req.params.id}`);
+});
+
+// Query parameter example
+app.get('/search', (req, res) => {
+  res.send(`You searched for term=${req.query.term}, category=${req.query.category}`);
+});
+
+// Building a URL dynamically
+app.get('/build-url', (req, res) => {
+  res.send('<a href="/profile/101?show=summary">Go to Profile</a>');
+});
+
+// Combining route + query parameters
+app.get('/profile/:id', (req, res) => {
+  res.send(`Profile of user ${req.params.id}. Show: ${req.query.show}`);
+});
+
+// Start the server
+app.listen(3000, () => console.log('Server running at http://localhost:3000'));
