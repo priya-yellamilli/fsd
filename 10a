@@ -1,0 +1,17 @@
+import React from "react";
+
+const Header = ({ title }) => <h1>{title}</h1>;
+const Content = ({ paragraphs }) => <>{paragraphs.map((p, i) => <p key={i}>{p}</p>)}</>;
+const Footer = () => <p>© 2025 All rights reserved</p>;
+
+function App() {
+  return (
+    <div>
+      <Header title="Welcome to My Site" />
+      <Content paragraphs={["This is the first paragraph.", "Here's another one."]} />
+      <Footer />
+    </div>
+  );
+}
+
+export default App;
