@@ -1,0 +1,68 @@
+App.js
+Home.js
+About.js
+Contact.js
+
+
+
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Home from "./Home";
+import About from "./About";
+import Contact from "./Contact";
+
+export default function App() {
+  return (
+    <Router>
+      <div style={{ textAlign: "center", fontFamily: "Arial", marginTop: 30 }}>
+        <h2>React Router Example</h2>
+        <nav>
+          <Link to="/" style={{ margin: 10 }}>Home</Link>
+          <Link to="/about" style={{ margin: 10 }}>About</Link>
+          <Link to="/contact" style={{ margin: 10 }}>Contact</Link>
+        </nav>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </div>
+    </Router>
+  );
+}
+
+
+Home.js
+export default function Home() {
+  return (
+    <>
+      <h2>Welcome to the Home Page</h2>
+      <p>This is the landing page of your React Router demo app.</p>
+    </>
+  );
+}
+
+
+About.js
+export default function About() {
+  return (
+    <>
+      <h2>About Page</h2>
+      <p>This page provides information about our React Router example.</p>
+    </>
+  );
+}
+
+
+
+
+Contact.js
+export default function Contact() {
+  return (
+    <>
+      <h2>Contact Page</h2>
+      <p>You can contact us at <b>sasi.ac.in</b></p>
+    </>
+  );
+}
+
